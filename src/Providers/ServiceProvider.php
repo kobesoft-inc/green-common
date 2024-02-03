@@ -1,5 +1,7 @@
 <?php
 
+namespace Green\Providers;
+
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
