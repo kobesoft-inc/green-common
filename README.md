@@ -85,3 +85,27 @@ NestedSetモデルの全ての選択肢を取得するメソッドを提供し�
 HasGetOptionsとの違いは、階層構造を持つモデルに対応している点です。
 getOptionsメソッドの引数の$htmlをtrueにすると、階層構造を表現したHTMLを返します。
 
+## FormComponent
+
+### Splitter
+
+`Splitter`は、フォームの入力項目を分割して表示するためのコンポーネントです。
+
+<img src="docs/images/splitter/sample1.jpg">
+
+```php
+use Kobesoft\GreenCommon\FormComponent\Splitter;
+
+public static function form(Form $form): Form
+{
+    return $form
+        ->schema([
+            //:
+            \Green\Forms\Components\Splitter::make()
+                ->label('Splitter Label'),
+            //:
+        ])
+        ->columns(1);
+}
+```
+
