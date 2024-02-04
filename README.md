@@ -20,7 +20,38 @@ composerでインストール
 composer install kobesoft/green-common
 ```
 
-## Model Traits
+作成していないなら、テーマを作成する。
+
+```shell
+php artisan make:filament-theme
+```
+
+tailwind.config.jsを編集する。
+
+```js:/resources/css/filament/admin/tailwind.config.js
+import preset from '../../../../vendor/filament/filament/tailwind.config.preset'
+
+export default {
+    presets: [preset],
+    content: [
+        './app/Filament/**/*.php',
+        './resources/views/filament/**/*.blade.php',
+        './vendor/filament/**/*.blade.php',
+        './vendor/kobesoft/**/*.blade.php',
+    ],
+}
+```
+
+作成したテーマを適用する。
+
+```php:/app/Providers/Filament/AdminPanelProvider.php
+    $panel
+        // :
+        ->viteTheme('resources/css/filament/admin/theme.css');
+        // :
+```
+
+## Modelトレイト
 
 ### HasGetOptions
 
@@ -40,6 +71,8 @@ class Prefecture extends Model
     const TITLE = 'name_jp';
 }
 ```
+
+選択肢を取得する場合は、`getOptions`メソッドを利用してください。
 
 ```php
 $prefectures = Prefecture::getOptions();
