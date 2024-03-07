@@ -1,12 +1,11 @@
 <?php
 
-namespace Green\Providers;
+namespace Green;
 
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
-use Illuminate\View\View;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class GreenCommonServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * アプリケーションサービスを登録する

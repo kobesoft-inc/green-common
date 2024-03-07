@@ -15,7 +15,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Green\\Providers\\ServiceProvider"
+                "Green\\GreenCommonServiceProvider"
             ]
         }
     }
